@@ -1,0 +1,1053 @@
+fileFormatVersion: 2
+guid: e8d8a352503e2874189540eae3b2e1e1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1529520497929796608
+    second: GatoSpritesheet_0
+  - first:
+      213: 6326141705710519303
+    second: GatoSpritesheet_1
+  - first:
+      213: 5059224245198478128
+    second: GatoSpritesheet_2
+  - first:
+      213: 3771311431574236851
+    second: GatoSpritesheet_3
+  - first:
+      213: 2253251544240653475
+    second: GatoSpritesheet_4
+  - first:
+      213: -7675427597124235843
+    second: GatoSpritesheet_5
+  - first:
+      213: -7252667726217303671
+    second: GatoSpritesheet_6
+  - first:
+      213: 6059295359019208490
+    second: GatoSpritesheet_7
+  - first:
+      213: -7132689920773031737
+    second: GatoSpritesheet_8
+  - first:
+      213: -794813574878658858
+    second: GatoSpritesheet_9
+  - first:
+      213: 516378774189817476
+    second: GatoSpritesheet_10
+  - first:
+      213: -8551185335077042648
+    second: GatoSpritesheet_11
+  - first:
+      213: 1538035477930155747
+    second: GatoSpritesheet_12
+  - first:
+      213: -715505500684838224
+    second: GatoSpritesheet_13
+  - first:
+      213: 89744098831998654
+    second: GatoSpritesheet_14
+  - first:
+      213: 5764449762905519153
+    second: GatoSpritesheet_15
+  - first:
+      213: -7753760411689304551
+    second: GatoSpritesheet_16
+  - first:
+      213: 7304614301382889391
+    second: GatoSpritesheet_17
+  - first:
+      213: -4907052405538555772
+    second: GatoSpritesheet_18
+  - first:
+      213: -6268301842576329228
+    second: GatoSpritesheet_19
+  - first:
+      213: -7979334500475063411
+    second: GatoSpritesheet_20
+  - first:
+      213: 7834078944412663466
+    second: GatoSpritesheet_21
+  - first:
+      213: 6436133484119498988
+    second: GatoSpritesheet_22
+  - first:
+      213: -4350064680130107682
+    second: GatoSpritesheet_23
+  - first:
+      213: -6325709362383390900
+    second: GatoSpritesheet_24
+  - first:
+      213: -1899858819527250905
+    second: GatoSpritesheet_25
+  - first:
+      213: 3128816858844359470
+    second: GatoSpritesheet_26
+  - first:
+      213: 4070804856390992977
+    second: GatoSpritesheet_27
+  - first:
+      213: 876445293048240744
+    second: GatoSpritesheet_28
+  - first:
+      213: 3200545004126493977
+    second: GatoSpritesheet_29
+  - first:
+      213: -5553500425753029267
+    second: GatoSpritesheet_30
+  - first:
+      213: 6990219740901474927
+    second: GatoSpritesheet_31
+  - first:
+      213: 5939147668235586412
+    second: GatoSpritesheet_32
+  - first:
+      213: -4828923140919947463
+    second: GatoSpritesheet_33
+  - first:
+      213: 4987120237540405366
+    second: GatoSpritesheet_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GatoSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00cb8c30ac2f93510800000000000000
+      internalID: 1529520497929796608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 96
+        width: 28
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 704c8af2d58fac750800000000000000
+      internalID: 6326141705710519303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 142
+        width: 47
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b591665a9f53640800000000000000
+      internalID: 5059224245198478128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 125
+        width: 59
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be2a5804c3665430800000000000000
+      internalID: 3771311431574236851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 125
+        width: 59
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4801c5758254f10800000000000000
+      internalID: 2253251544240653475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 125
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd0e2e34476b7590800000000000000
+      internalID: -7675427597124235843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 125
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 989a0e81129595b90800000000000000
+      internalID: -7252667726217303671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 125
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f43878601f61450800000000000000
+      internalID: 6059295359019208490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 92
+        width: 156
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c87053ce48930d90800000000000000
+      internalID: -7132689920773031737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 108
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6def2b6c34148f4f0800000000000000
+      internalID: -794813574878658858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 108
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48eb22d52cb8a2700800000000000000
+      internalID: 516378774189817476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 108
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826043e6e36145980800000000000000
+      internalID: -8551185335077042648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 108
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee99f94e13385510800000000000000
+      internalID: 1538035477930155747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 108
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba97dcb9830216f0800000000000000
+      internalID: -715505500684838224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 108
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebe919b48c5de3100800000000000000
+      internalID: 89744098831998654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 108
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134719b94807fff40800000000000000
+      internalID: 5764449762905519153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 141
+        width: 68
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91eb5cb9cfb156490800000000000000
+      internalID: -7753760411689304551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 141
+        width: 47
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf4a2f61043f5560800000000000000
+      internalID: 7304614301382889391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 141
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488f5a9f5d5a6ebb0800000000000000
+      internalID: -4907052405538555772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 96
+        width: 35
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f5bf406fa48209a0800000000000000
+      internalID: -6268301842576329228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 96
+        width: 36
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d833a235c85b34190800000000000000
+      internalID: -7979334500475063411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 96
+        width: 35
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae75101b4d38bc60800000000000000
+      internalID: 7834078944412663466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 96
+        width: 35
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0a0ffbd4db15950800000000000000
+      internalID: 6436133484119498988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 96
+        width: 36
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed62fd6983771a3c0800000000000000
+      internalID: -4350064680130107682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 96
+        width: 36
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4776c699d09638a0800000000000000
+      internalID: -6325709362383390900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 96
+        width: 66
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c6fa2387852a5e0800000000000000
+      internalID: -1899858819527250905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 96
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2bebae1b5acb6b20800000000000000
+      internalID: 3128816858844359470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 125
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154ce17e2776e7830800000000000000
+      internalID: 4070804856390992977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 125
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a1435b952c92c00800000000000000
+      internalID: 876445293048240744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 125
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d5c9a59be9a6c20800000000000000
+      internalID: 3200545004126493977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 125
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65920759c00ee2b0800000000000000
+      internalID: -5553500425753029267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 125
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f620b5e81df320160800000000000000
+      internalID: 6990219740901474927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 125
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b85c956571c6250800000000000000
+      internalID: 5939147668235586412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 125
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f8dc1fcf73cfcb0800000000000000
+      internalID: -4828923140919947463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GatoSpritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 1346
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 670f1c2ee6fc53540800000000000000
+      internalID: 4987120237540405366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GatoSpritesheet_0: 1529520497929796608
+      GatoSpritesheet_1: 6326141705710519303
+      GatoSpritesheet_10: 516378774189817476
+      GatoSpritesheet_11: -8551185335077042648
+      GatoSpritesheet_12: 1538035477930155747
+      GatoSpritesheet_13: -715505500684838224
+      GatoSpritesheet_14: 89744098831998654
+      GatoSpritesheet_15: 5764449762905519153
+      GatoSpritesheet_16: -7753760411689304551
+      GatoSpritesheet_17: 7304614301382889391
+      GatoSpritesheet_18: -4907052405538555772
+      GatoSpritesheet_19: -6268301842576329228
+      GatoSpritesheet_2: 5059224245198478128
+      GatoSpritesheet_20: -7979334500475063411
+      GatoSpritesheet_21: 7834078944412663466
+      GatoSpritesheet_22: 6436133484119498988
+      GatoSpritesheet_23: -4350064680130107682
+      GatoSpritesheet_24: -6325709362383390900
+      GatoSpritesheet_25: -1899858819527250905
+      GatoSpritesheet_26: 3128816858844359470
+      GatoSpritesheet_27: 4070804856390992977
+      GatoSpritesheet_28: 876445293048240744
+      GatoSpritesheet_29: 3200545004126493977
+      GatoSpritesheet_3: 3771311431574236851
+      GatoSpritesheet_30: -5553500425753029267
+      GatoSpritesheet_31: 6990219740901474927
+      GatoSpritesheet_32: 5939147668235586412
+      GatoSpritesheet_33: -4828923140919947463
+      GatoSpritesheet_34: 4987120237540405366
+      GatoSpritesheet_4: 2253251544240653475
+      GatoSpritesheet_5: -7675427597124235843
+      GatoSpritesheet_6: -7252667726217303671
+      GatoSpritesheet_7: 6059295359019208490
+      GatoSpritesheet_8: -7132689920773031737
+      GatoSpritesheet_9: -794813574878658858
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

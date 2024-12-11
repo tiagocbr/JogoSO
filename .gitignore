@@ -1,0 +1,29 @@
+# Ignore arquivos gerados pelo Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+
+# Ignore metadados de compilação para VS/JetBrains Rider
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Ignore arquivos do sistema
+.DS_Store
+*.swp
+Thumbs.db
+
+# Ignore pacotes locais do Unity
+*.unitypackage
+
+# Ignore arquivos de cache do Editor
+/Assets/Plugins/Editor/*.cs.meta
