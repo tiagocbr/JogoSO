@@ -600,8 +600,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1172
-    y: 79.200005
+    x: 1173
+    y: 24
     width: 363
     height: 690.8
   m_SerializedDataModeController:
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79.200005
+    y: 24
     width: 289.4
     height: 398
   m_SerializedDataModeController:
@@ -715,8 +715,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 290.4
-    y: 79.200005
+    x: 291.4
+    y: 24
     width: 879.6
     height: 398
   m_SerializedDataModeController:
@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 503.2
+    y: 448
     width: 1171
     height: 266.8
   m_SerializedDataModeController:

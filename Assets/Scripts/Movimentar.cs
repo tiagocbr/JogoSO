@@ -7,7 +7,6 @@ public class Movimentar : MonoBehaviour
 
     public float velocidade;
 
-    // Update is called once per frame
     private void Update()
     {
         transform.Translate(direcao * velocidade * Time.deltaTime);

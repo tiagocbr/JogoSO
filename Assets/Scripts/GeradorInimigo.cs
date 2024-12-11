@@ -13,7 +13,7 @@ public class GeradorInimigo : MonoBehaviour
     public float delayInicial;
 
     public float delayEntreBaldes;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     private void Start()
     {
         InvokeRepeating("GerarInimigo", delayInicial, delayEntreBaldes);

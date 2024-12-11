@@ -1,93 +1,49 @@
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Linq;
 using System.Net;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-public class TriviaManager : MonoBehaviour
+using Models;
+using Services;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class Questions : MonoBehaviour
 {
-    [Serializable]
-    public class TriviaQuestion
-    {
-        public string category;
-        public string type;
-        public string difficulty;
-        public string question;
-        public string correct_answer;
-        public string[] incorrect_answers;
-    }
-
-    [Serializable]
-    public class TriviaApiResponse
-    {
-        public int response_code;
-        public TriviaQuestion[] results;
-    }
-
-    [Serializable]
-    public class ResponseData
-    {
-        public string translatedText; // Campo de interesse
-    }
-
-    [Serializable]
-    public class TranslationResponse
-    {
-        public ResponseData responseData; // Objeto contendo a tradução
-    }
-
-
-    private Thread triviaThread;
-
-    private Thread translateThread;
-    private readonly Queue<TriviaQuestion> questionQueue = new Queue<TriviaQuestion>();
-    private readonly SemaphoreSlim queueSemaphore = new SemaphoreSlim(0); // Para sincronizar quando há perguntas disponíveis
-
-    private readonly SemaphoreSlim rc = new SemaphoreSlim(1); // Para sincronizar quando há perguntas disponíveis
-
-    private readonly SemaphoreSlim queueCapacitySemaphore = new SemaphoreSlim(5, 5); // Limita a fila a no máximo 5 elementos
-    private bool isRunning = true;
-
     public Text questionsText;
     public Text finalText;
     public GameObject jogador2;
-
-    private bool perdi = false;
     public Text pontosText;
 
+    private bool perdi = false;
     private float pontos;
     private float tempoDecorrido;
-
     private int qtdPerguntas = 0;
-    private const string TriviaApiUrl = "https://opentdb.com/api.php?amount=1&category=18";
+
+    private readonly Queue<TriviaQuestion> questionQueue = new Queue<TriviaQuestion>();
+    private readonly Queue<TriviaQuestion> translatedQuestionQueue = new Queue<TriviaQuestion>();
+    private readonly SemaphoreSlim queueSemaphore = new SemaphoreSlim(0);
+    private readonly SemaphoreSlim queueCapacitySemaphore = new SemaphoreSlim(5, 5);
+    private readonly object queueLock2 = new object();
+
+    private TriviaService triviaService;
+    private TranslationService translationService;
 
     private List<string> currentAnswers;
     private string correctAnswer;
 
-    private Thread translationThread;
-    private readonly Queue<TriviaQuestion> translatedQuestionQueue = new Queue<TriviaQuestion>(); // Fila para armazenar perguntas traduzidas
-    private readonly object queueLock = new object(); // Para sincronização
+    private CancellationTokenSource cancellationTokenSource;
 
-
-    private readonly object queueLock2 = new object(); // Para sincronização
-    private bool isRunning2 = true;
-
-    public string textToTranslate = "Hello, how are you today?";
-    public string translatedText;
-
-    private void Start()
+    private void Awake()
     {
-        triviaThread = new Thread(FetchTriviaQuestions);
-        triviaThread.Start();
+        triviaService = new TriviaService();
+        translationService = new TranslationService();
+        cancellationTokenSource = new CancellationTokenSource();
 
-        translationThread = new Thread(RunTranslation);
-        translationThread.Start();
-
+        Task.Run(() => FetchTriviaQuestionsAsync(cancellationTokenSource.Token));
+        Task.Run(() => RunTranslationAsync(cancellationTokenSource.Token));
     }
 
     private void Update()
@@ -153,8 +109,9 @@ public class TriviaManager : MonoBehaviour
         correctAnswer = question.correct_answer;
         currentAnswers.Add(correctAnswer);
 
-        // System.Random random = new System.Random();
-        // currentAnswers = currentAnswers.OrderBy(x => random.Next()).ToList();
+        // Sortear as alternativas
+        System.Random random = new System.Random();
+        currentAnswers = currentAnswers.OrderBy(x => random.Next()).ToList();
 
         char optionLetter = '1';
         foreach (string answer in currentAnswers)
@@ -190,85 +147,54 @@ public class TriviaManager : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private async Task FetchTriviaQuestionsAsync(CancellationToken token)
     {
-        // Sinaliza para as threads que elas devem parar
-        isRunning = false;
-        isRunning2 = false;
-
-        // Aguarda a conclusão das threads, se existirem
-        if (triviaThread != null && triviaThread.IsAlive)
+        while (!token.IsCancellationRequested)
         {
-            triviaThread.Join();
-        }
-
-        if (translationThread != null && translationThread.IsAlive)
-        {
-            translationThread.Join();
-        }
-
-        Debug.Log("Threads encerradas com segurança.");
-    }
-
-    private void FetchTriviaQuestions()
-    {
-        using (HttpClient client = new HttpClient())
-        {
-            while (isRunning)
+            try
             {
-                try
+                TriviaApiResponse apiResponse = await triviaService.FetchTriviaQuestionsAsync();
+                if (apiResponse != null && apiResponse.results != null && apiResponse.results.Length > 0)
                 {
-                    HttpResponseMessage response = client.GetAsync(TriviaApiUrl).Result;
-                    if (response.IsSuccessStatusCode)
+                    TriviaQuestion rawQuestion = apiResponse.results[0];
+                    TriviaQuestion decodedQuestion = new TriviaQuestion
                     {
-                        string jsonResponse = response.Content.ReadAsStringAsync().Result;
-                        TriviaApiResponse apiResponse = JsonUtility.FromJson<TriviaApiResponse>(jsonResponse);
+                        category = WebUtility.HtmlDecode(rawQuestion.category),
+                        type = rawQuestion.type,
+                        difficulty = rawQuestion.difficulty,
+                        question = WebUtility.HtmlDecode(rawQuestion.question),
+                        correct_answer = WebUtility.HtmlDecode(rawQuestion.correct_answer),
+                        incorrect_answers = Array.ConvertAll(rawQuestion.incorrect_answers, WebUtility.HtmlDecode)
+                    };
 
-                        if (apiResponse != null && apiResponse.results != null && apiResponse.results.Length > 0)
-                        {
-                            TriviaQuestion rawQuestion = apiResponse.results[0];
-                            TriviaQuestion decodedQuestion = new TriviaQuestion
-                            {
-                                category = WebUtility.HtmlDecode(rawQuestion.category),
-                                type = rawQuestion.type,
-                                difficulty = rawQuestion.difficulty,
-                                question = WebUtility.HtmlDecode(rawQuestion.question),
-                                correct_answer = WebUtility.HtmlDecode(rawQuestion.correct_answer),
-                                incorrect_answers = Array.ConvertAll(rawQuestion.incorrect_answers, WebUtility.HtmlDecode)
-                            };
-
-                            AddQuestion(decodedQuestion);
-                        }
-                    }
+                    AddQuestion(decodedQuestion);
                 }
-                catch (Exception ex)
-                {
-                    Debug.LogError("Erro na thread de perguntas: " + ex.Message);
-                }
-
-                Thread.Sleep(1000); // Evita sobrecarregar a API
             }
+            catch (Exception ex)
+            {
+                Debug.LogError("Erro ao buscar perguntas: " + ex.Message);
+            }
+
+            await Task.Delay(1000, token);
         }
     }
 
     private void AddQuestion(TriviaQuestion question)
     {
         queueCapacitySemaphore.Wait();
-        rc.Wait();
-
-        questionQueue.Enqueue(question);
-        Debug.Log("Pergunta adicionada à fila.");
-
-        rc.Release();
+        lock (queueLock2)
+        {
+            questionQueue.Enqueue(question);
+            Debug.Log("Pergunta adicionada à fila.");
+        }
         queueSemaphore.Release();
-        Debug.Log("Pergunta adicionada à fila.");
     }
 
     public TriviaQuestion ConsumeQuestion()
     {
-        lock (queueLock2) // Garante que o acesso à fila é thread-safe
+        lock (queueLock2)
         {
-            if (translatedQuestionQueue.Count > 0) // Verifica se há elementos na fila
+            if (translatedQuestionQueue.Count > 0)
             {
                 TriviaQuestion question = translatedQuestionQueue.Dequeue();
                 Debug.Log("Pergunta consumida.");
@@ -277,41 +203,40 @@ public class TriviaManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("A fila de perguntas traduzidas está vazia.");
-                return null; // Retorna null se a fila estiver vazia
+                return null;
             }
         }
     }
 
-    private async void RunTranslation()
+    private async Task RunTranslationAsync(CancellationToken token)
     {
-        while (isRunning2)
+        while (!token.IsCancellationRequested)
         {
             TriviaQuestion questionToTranslate = null;
 
-            // Obtém a pergunta da fila `questionQueue`
-            queueSemaphore.Wait();
-            rc.Wait();
+            await queueSemaphore.WaitAsync(token);
+            queueCapacitySemaphore.Release();
 
-            questionToTranslate = questionQueue.Dequeue();
-            Debug.Log("Pergunta consumida.");
-            queueCapacitySemaphore.Release(); // Libera um slot no semáforo de capacidade
-
-            rc.Release();
-
-
+            lock (queueLock2)
+            {
+                if (questionQueue.Count > 0)
+                {
+                    questionToTranslate = questionQueue.Dequeue();
+                }
+            }
 
             if (questionToTranslate != null)
             {
                 try
                 {
-                    // Tradução dos membros da pergunta usando TranslateTextAsync
-                    questionToTranslate.question = await TranslateTextAsync(questionToTranslate.question);
-                    questionToTranslate.correct_answer = await TranslateTextAsync(questionToTranslate.correct_answer);
-                    questionToTranslate.incorrect_answers = await Task.WhenAll(
-                        questionToTranslate.incorrect_answers.Select(TranslateTextAsync)
-                    );
+                    questionToTranslate.question = await translationService.TranslateTextAsync(questionToTranslate.question);
+                    questionToTranslate.correct_answer = await translationService.TranslateTextAsync(questionToTranslate.correct_answer);
 
-                    // Adiciona à fila de perguntas traduzidas
+                    for (int i = 0; i < questionToTranslate.incorrect_answers.Length; i++)
+                    {
+                        questionToTranslate.incorrect_answers[i] = await translationService.TranslateTextAsync(questionToTranslate.incorrect_answers[i]);
+                    }
+
                     lock (queueLock2)
                     {
                         translatedQuestionQueue.Enqueue(questionToTranslate);
@@ -325,60 +250,13 @@ public class TriviaManager : MonoBehaviour
             }
             else
             {
-                // Se não houver perguntas, faz uma pausa para evitar sobrecarga da CPU
-                await Task.Delay(500);
+                await Task.Delay(500, token);
             }
         }
     }
 
-
-    private async Task<string> TranslateTextAsync(string url)
+    private void OnDestroy()
     {
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-
-                // Envia a requisição GET para a API
-                HttpResponseMessage response = await client.GetAsync($"https://api.mymemory.translated.net/get?q={Uri.EscapeDataString(url)}&langpair=en|pt");
-
-                // Verifica se a resposta foi bem-sucedida
-                response.EnsureSuccessStatusCode();
-
-                // Lê o conteúdo da resposta como string
-                string responseBody = await response.Content.ReadAsStringAsync();
-                Debug.Log($"responseBody: {responseBody}");
-
-                TranslationResponse translationResponse = JsonUtility.FromJson<TranslationResponse>(responseBody);
-
-                // Acessa o texto traduzido
-                if (translationResponse != null && translationResponse.responseData != null)
-                {
-                    string textoTraduzido = translationResponse.responseData.translatedText;
-
-                    Debug.LogError($"Tradução : {url} => {textoTraduzido}");
-                    return textoTraduzido;
-                }
-                else
-                {
-                    Debug.LogError("Erro ao desserializar o JSON ou campo inexistente.");
-                    return null;
-                }
-
-            }
-            catch (HttpRequestException e)
-            {
-                Console.WriteLine("Erro ao realizar a requisição:");
-                Console.WriteLine(e.Message);
-                return "Erro na tradução.";
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erro inesperado:");
-                Console.WriteLine(ex.Message);
-                return "Erro na tradução.";
-            }
-        }
+        cancellationTokenSource.Cancel();
     }
-
 }

@@ -25,13 +25,13 @@ public class Jogador : MonoBehaviour
 
     private bool perdi = false;
 
-    // Update is called once per frame
+
     void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.S) && perdi)
         {
-            Time.timeScale = 1; // Retoma o tempo
+            Time.timeScale = 1;
             perdi = false;
             SceneManager.LoadScene(0);
             return;
@@ -77,7 +77,6 @@ public class Jogador : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Inimigo"))
         {
-            // Pausa o jogo
             if (jogador2.activeSelf)
             {
                 finalText.text = "Você Perdeu! Digite S para reiniciar o jogo.";
