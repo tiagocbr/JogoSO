@@ -214,8 +214,9 @@ public class Questions : MonoBehaviour
         {
             TriviaQuestion questionToTranslate = null;
 
-            await queueSemaphore.WaitAsync(token);
-            queueCapacitySemaphore.Release();
+
+
+            queueSemaphore.Wait();
 
             lock (queueLock2)
             {
@@ -224,6 +225,8 @@ public class Questions : MonoBehaviour
                     questionToTranslate = questionQueue.Dequeue();
                 }
             }
+
+            queueCapacitySemaphore.Release();
 
             if (questionToTranslate != null)
             {
