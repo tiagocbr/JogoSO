@@ -26,6 +26,8 @@ public class Questions : MonoBehaviour
     private readonly Queue<TriviaQuestion> translatedQuestionQueue = new Queue<TriviaQuestion>();
     private readonly SemaphoreSlim queueSemaphore = new SemaphoreSlim(0);
     private readonly SemaphoreSlim queueCapacitySemaphore = new SemaphoreSlim(5, 5);
+
+    private readonly SemaphoreSlim rc = new SemaphoreSlim(1);
     private readonly object queueLock2 = new object();
 
     private TriviaService triviaService;
@@ -182,11 +184,12 @@ public class Questions : MonoBehaviour
     private void AddQuestion(TriviaQuestion question)
     {
         queueCapacitySemaphore.Wait();
-        lock (queueLock2)
-        {
-            questionQueue.Enqueue(question);
-            Debug.Log("Pergunta adicionada à fila.");
-        }
+        rc.Wait();
+
+        questionQueue.Enqueue(question);
+        Debug.Log("Pergunta adicionada à fila.");
+
+        rc.Release();
         queueSemaphore.Release();
     }
 
@@ -206,6 +209,7 @@ public class Questions : MonoBehaviour
                 return null;
             }
         }
+
     }
 
     private async Task RunTranslationAsync(CancellationToken token)
@@ -218,13 +222,11 @@ public class Questions : MonoBehaviour
 
             queueSemaphore.Wait();
 
-            lock (queueLock2)
-            {
-                if (questionQueue.Count > 0)
-                {
-                    questionToTranslate = questionQueue.Dequeue();
-                }
-            }
+            rc.Wait();
+
+            questionToTranslate = questionQueue.Dequeue();
+
+            rc.Release();
 
             queueCapacitySemaphore.Release();
 
